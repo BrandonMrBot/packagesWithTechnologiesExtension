@@ -11,12 +11,41 @@ from climmob.products.climmob_products import (
 
 class packagesWithTechnologiesExtension(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfig)
+    # plugins.implements(plugins.IProduct)
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IpackagesWithTechnologiesExtension)
 
     def update_config(self, config):
         # We add here the templates of the plugin to the config
         u.addTemplatesDirectory(config, "templates")
+
+    # def register_products(self, config):
+    #     # PACKAGES WITH TECNOLOGIES
+    #
+    #     # packagesWithTechnologies = addProduct(
+    #     #     "qrpackagewithtechnologies", "List of packages with QR - Showing technologies."
+    #     # )
+    #     # addMetadataToProduct(packagesWithTechnologies, "author", "Brandon Madriz")
+    #     # addMetadataToProduct(packagesWithTechnologies, "version", "1.0")
+    #     # addMetadataToProduct(
+    #     #     packagesWithTechnologies,
+    #     #     "Licence",
+    #     #     "Copyright 2021, MrBot Software Solutions",
+    #     # )
+    #     # products.append(packagesWithTechnologies)
+    #
+    #     productInformation = [
+    #         {
+    #             "name": "qrpackagewithtechnologies",
+    #             "description": "List of packages with QR - Showing technologies",
+    #             "metadata": {
+    #                 "author": "Brandon Madriz",
+    #                 "version": "1.0",
+    #                 "Licence": "Copyright 2021, MrBot Software Solutions",
+    #             },
+    #         }
+    #     ]
+    #     return productInformation
 
     def get_translation_directory(self):
         module = sys.modules["packagesWithTechnologiesExtension"]
