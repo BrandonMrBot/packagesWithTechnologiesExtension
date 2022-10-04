@@ -105,7 +105,7 @@ def createQRWithTechnologies(self, locale, path, projectid, packages):
             sh.rmtree(path)
             return ""
 
-        qr, optionsList = create_qr(package, projectid, pathqr)
+        qr, optionsList = create_qr(package, projectid, pathqr, all=False)
 
         # HTMLS
         os.system(
@@ -141,7 +141,7 @@ def createQRWithTechnologies(self, locale, path, projectid, packages):
             os.system(
                 "pdfjam "
                 + allPNGpaths
-                + "  --no-landscape --nup 2x4 --frame true --outfile "
+                + "  --no-landscape --nup 3x4 --frame true --outfile "
                 + pathpdf
                 + "/"
                 + str(veces)
@@ -167,7 +167,7 @@ def createQRWithTechnologies(self, locale, path, projectid, packages):
         os.system(
             "pdfjam "
             + allPNGpaths
-            + "  --no-landscape --nup 2x4 --frame true --outfile "
+            + "  --no-landscape --nup 3x4 --frame true --outfile "
             + pathpdf
             + "/"
             + str(veces)
